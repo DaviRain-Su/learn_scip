@@ -20,6 +20,105 @@
 ;;; (define circumference (* 2 pi radius))
 
 
+;;; define square
+;;; (define (<name>  <formal parameters>) <body>)
+(define (square x) (* x x))
+
+;;; define sum-of-squares
+(define (sum-of-squares x y)
+  (+ (square x) (square y)))
+
+;;; define f
+
+(define (f a)
+  (sum-of-squares (+ a 1) (* a 2)))
+
+;;; cond
+;;; define abs
+;;; (cond (<p1> <e1>)
+;;;       (<p2> <e2>)
+;;;       .....
+;;;       (<pn> <en>)
+
+;;;(define (abs x)
+;;;  ( cond ((> x 0) x)
+;;;         ((= x 0) 0)
+;;;         ((< x 0) (- x))))
+
+;;;(define (abs x)
+;;;  (cond ((< x 0) (- x))
+;;;        (else x)))
+
+(define (abs x)
+  (if (< x 0)
+      (- x)
+      x))
+
+;;; define scope 5 < x < 10
+(define (scope x)
+  (and (> x 5) (< x 10)))
+
+;;; define >=
+;;;(define (>= x y)
+;;;  (or (> x y) (= x y)))
+
+;;; define >=
+(define (>= x y)
+  (not (< x y)))
+
+;;; excise 1.1
+
+10 ;10
+
+(+ 5 4 3) ; 12
+
+(- 9 1) ; 8
+
+(/ 6 2) ; 3
+
+(+ (* 2 4) (- 4 6)) ; (+ 8 -2) -> 6
+
+(define a 3) ; define a is 3
+
+(define b (+ a 1)) ; define b is (a + 1)
+
+(+ a b (* a b)) ; (+ a (+ a 1) (* a (+ a 1))) -> (+ 3 4 (* 3 4)) -> (+ 3 4 12) -> 19
+
+(= a b) ; 3 == 4 -> false
+
+(if (and (> b a) (< b (* a b))) ; a < b && b < (a * b) -> 3 < 4 && 4 < 12
+    b ; 4
+    a); 3
+
+(cond ((= a 4) 6) ; a == 4 -> 6
+      ((= b 4) (+ 6 7 a)); b == 4 -> 6 + 7 + a
+      (else 25)) ; -> 25
+
+(+ 2 (if (> b a) b a)) ; (+ 2 4) -> 6
+
+(* (cond ((> a b) a) ; (* 4 4) —> 16
+         ((< a b) b)
+         (else -1))
+   (+ a 1))
+
+;;; excise 1.2
+
+(/ (+ 5
+      4
+      (- 2
+         (- 3
+            (+ 6
+               (/ 4 5)))))
+   (* 3
+      (- 6 2)
+      (- 2 7)))
+
+;;; excise 1.3
+
+(define (max-two-sum x y z)
+  
+  )
+
 
 
 
