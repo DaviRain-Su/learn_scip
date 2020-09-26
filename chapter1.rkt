@@ -116,8 +116,25 @@
 ;;; excise 1.3
 
 (define (max-two-sum x y z)
-  
-  )
+  (- (+ x y z)
+     (cond ((and (< x y) (< x z)) x)
+           ((and (< y x) (< y z)) y)
+           ((and (< z x) (< z y)) z))))
+
+;;; excise 1.4
+
+(define (a-plus-abs-b a b)
+  ((if (> b 0) + -) a b))
+
+;;; excise 1.5
+
+(define p 4)
+
+(define (test x y)
+  (if (= x 0)
+      0
+      y))
+
 
 
 
